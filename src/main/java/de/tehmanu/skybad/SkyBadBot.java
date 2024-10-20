@@ -1,6 +1,9 @@
 package de.tehmanu.skybad;
 
-import de.tehmanu.skybad.commands.*;
+import de.tehmanu.skybad.commands.AdminLogoutCommand;
+import de.tehmanu.skybad.commands.LoginCommand;
+import de.tehmanu.skybad.commands.LogoutCommand;
+import de.tehmanu.skybad.commands.LogtimeCommand;
 import de.tehmanu.skybad.datasource.PostgreSQLDataSource;
 import de.tehmanu.skybad.listener.ApplicationListener;
 import de.tehmanu.skybad.manager.ApplicationManager;
@@ -92,7 +95,6 @@ public class SkyBadBot {
         this.JDA.addEventListener(new LogoutCommand(this.workingTimeRepository));
         this.JDA.addEventListener(new AdminLogoutCommand(this.workingTimeRepository));
         this.JDA.addEventListener(new LogtimeCommand(this.workingTimeRepository));
-        this.JDA.addEventListener(new ApplyCommand());
         this.JDA.addEventListener(new ApplicationListener());
         this.JDA.addEventListener(inactivityTask);
     }
